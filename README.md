@@ -1,8 +1,6 @@
 # Task CLI Application
 
 This is a simple command-line interface (CLI) application for managing tasks. You can add, update, delete, mark, and list tasks directly from the terminal.
-Sample solution for the [task-tracker](https://roadmap.sh/projects/task-tracker) challenge from [roadmap.sh](https://roadmap.sh/).
-
 
 ## Features
 
@@ -12,10 +10,22 @@ Sample solution for the [task-tracker](https://roadmap.sh/projects/task-tracker)
 - **Mark a Task:** Mark a task as "in progress" or "done."
 - **List Tasks:** List all tasks or filter them by status (e.g., `todo`, `in progress`, `done`).
 
+## Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/lephuocloc1729/task_tracker_cli
+   cd task_tracker_cli
+
+2. **Compile the source code:**
+    ```bash
+   javac TaskCLIApp.java Task.java TaskManager.java Status.java
+3. **Run the application:**
+    ```bash
+   java TaskCLIApp <command> [arguments]
+   ```
 ## Usage
-
-The application supports the following commands:
-
 ```bash
 # Adding a new task
 java TaskCLIApp add "Buy groceries"
@@ -45,3 +55,5 @@ java TaskCLIApp list
 java TaskCLIApp list todo
 java TaskCLIApp list in-progress
 java TaskCLIApp list done
+
+```
