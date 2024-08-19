@@ -1,8 +1,4 @@
 [
-{"id":"1", "description":"Buy groceries and cook dinner", "status":"In progress"},
-{"id":"3", "description":"Buy groceries and cook dinner", "status":"Done"},
-{"id":"5", "description":"Buy groceries", "status":"Done"},
-{"id":"6", "description":"Buy groceries", "status":"Done"},
-{"id":"7", "description":"Buy groceries", "status":"Todo"},
-{"id":"8", "description":"Buy groceries", "status":"Todo"}
+{"id":"1", "description":"New task", "status":"Todo", "createdAt":"2024-08-19T17:12:24.510706", "updatedAt":"2024-08-19T17:12:24.51076"},
+{"id":"2", "description":"New task", "status":"Todo", "createdAt":"2024-08-19T17:25:05.363261", "updatedAt":"2024-08-19T17:25:05.363269"}
 ]
