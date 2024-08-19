@@ -4,12 +4,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskTracker {
+public class TaskManager {
     private final Path FILE_PATH = Path.of("/Users/leloc/PROJECTS/task_tracker_cli/tasks.json");
     private List<Task> tasks;
 
 
-    public TaskTracker(){
+    public TaskManager(){
         this.tasks = loadTasks();
     }
 
@@ -40,11 +40,7 @@ public class TaskTracker {
         return stored_tasks;
     }
 
-    private void saveTasks() throws IOException {
-        if (!Files.exists(FILE_PATH)){
-            Files.createFile(FILE_PATH);
-        }
-
+    public void saveTasks(){
         StringBuilder sb = new StringBuilder();
         sb.append("[\n");
         for (int i = 0; i < tasks.size(); i++){
@@ -56,12 +52,17 @@ public class TaskTracker {
         sb.append("\n]");
 
         String jsonContent = sb.toString();
-        Files.writeString(FILE_PATH, jsonContent);
+        try {
+            Files.writeString(FILE_PATH, jsonContent);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     public void addTask(String description){
         Task new_task = new Task(description);
         tasks.add(new_task);
+        System.out.println("Task added successfully (ID: " + new_task.getId() + ")");
     }
 
     public void updateTask(String id, String new_description){
@@ -93,17 +94,9 @@ public class TaskTracker {
         }
     }
 
-    public void quit(){
-        try {
-            saveTasks();
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-
     public Task findTask(String id) throws IllegalArgumentException {
         for (Task task : tasks){
-            if (task.getId().equals(id)){
+            if (task.getId() == Integer.parseInt(id)){
                 return task;
             }
         }
